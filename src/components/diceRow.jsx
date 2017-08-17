@@ -13,8 +13,13 @@ class DiceRow extends React.Component {
   render(){
     let dices;
     if(this.props.row){
-      dices = this.props.row.map((die) => (
-        <Dice die={die}/>
+      dices = this.props.row.map((die, i) => (
+        <Dice key={i} die={die}
+          clear={this.props.clear}
+          coords={[this.props.rowNum, i]}
+          lastCords={this.props.lastCords}
+          deleteLetter={this.props.deleteLetter}
+          addLetter={this.props.addLetter}/>
       ));
     }
     return (

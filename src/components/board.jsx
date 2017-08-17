@@ -55,15 +55,13 @@ class Board extends React.Component {
     let i = 0;
     while (dices.length < 5){
         let row = this.state.dice_arr.slice(i, i+5);
-        dices.push(<DiceRow row={row}/>);
+        dices.push(<DiceRow key={i/5} rowNum={i/5} row={row}
+          lastCords={this.props.lastCords}
+          clear={this.props.clear}
+          deleteLetter={this.props.deleteLetter}
+          addLetter={this.props.addLetter}/>);
         i += 5;
     }
-    // if(this.state.dice_arr){
-    //   dices = this.state.dice_arr.map((row) => (
-    //     <DiceRow row={row}/>
-    //   ));
-    // }
-    // console.log(this.state.dice_arr);
     return (
       <div className="board">
         {dices}

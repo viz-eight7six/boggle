@@ -17,15 +17,24 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+html, body{
+  padding: 0;
+  margin: 0;
+  background-color: #F57921;
+}
+html{
+  height: 100%;
+}
+body{
+  min-height: 100%;
 }
 
 .game {
   background-color: #F57921;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .board {
@@ -58,9 +67,57 @@
   box-shadow: -2px 2px 4px #191919;
 }
 
+.dice:hover {
+  cursor: pointer;
+}
+
 .dice-span {
   top: 50%;
   display: block;
   position: relative;
   transform: translateY(-50%);
+}
+
+.current-word {
+  margin: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 325px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  vertical-align: middle;
+}
+.current-word > button {
+  height: 20px;
+  width: 100px;
+}
+
+table, th, td {
+  border-width: 5px;
+  border-style: solid;
+  border-color: #FFCA08;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  background-color: white;
+}
+
+.table-container {
+  width: 325px;
+  align-items: baseline;
+}
+
+th, td{
+  padding: 5px;
+}
+
+tfoot {
+  background-color: #ACCEEC;
+}
+
+.word {
+  width: 120px;
 }
